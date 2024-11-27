@@ -3,7 +3,7 @@ import 'color_manager.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
-    scaffoldBackgroundColor: ColorManager.white,
+    scaffoldBackgroundColor: ColorManager.mainBlack,
     primaryColor: ColorManager.primary,
   );
 }
