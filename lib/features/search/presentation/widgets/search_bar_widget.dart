@@ -1,6 +1,5 @@
 import 'package:slashhub_app/core/imports/search_imports.dart';
 
-
 class SearchBarWidget extends StatelessWidget {
   final String labelText;
   final ValueChanged<String>? onChanged;

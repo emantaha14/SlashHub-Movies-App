@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slashhub_app/core/helpers/app_strings.dart';
 import 'package:slashhub_app/core/imports/movies_list_imports.dart';
 import 'package:slashhub_app/features/HomeScreen/cubit/buttom_navigation_bar_cubit.dart';
 
@@ -12,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text('Movies List',
+      title: Text(AppStrings.moviesTitle,
           style: TextStyle(color: ColorManager.white, fontSize: 20)),
       toolbarHeight: 100.h,
       leading: Padding(

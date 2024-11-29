@@ -1,4 +1,5 @@
-import 'package:slashhub_app/core/common_widgets/search_error_widget.dart';
+import 'package:slashhub_app/core/common_widgets/custom_error_widget.dart';
+import 'package:slashhub_app/core/common_widgets/loading_widget.dart';
 import 'package:slashhub_app/core/imports/movies_list_imports.dart';
 
 class MoviesScreen extends StatelessWidget {

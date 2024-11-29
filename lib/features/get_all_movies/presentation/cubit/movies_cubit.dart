@@ -1,7 +1,6 @@
 import 'package:slashhub_app/core/imports/movies_list_imports.dart';
 import 'package:slashhub_app/features/get_all_movies/data/models/movies_model.dart';
 
-
 part 'movies_state.dart';
 
 class MoviesCubit extends Cubit<MoviesState> {

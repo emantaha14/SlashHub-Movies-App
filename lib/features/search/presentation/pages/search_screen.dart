@@ -1,4 +1,4 @@
-import 'package:slashhub_app/core/imports/movies_list_imports.dart';
+import 'package:slashhub_app/core/common_widgets/loading_widget.dart';
 import 'package:slashhub_app/core/imports/search_imports.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class SearchScreen extends StatelessWidget {
             children: [
               DefaultSizedBox.vertical(40.h),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                 child: SearchBarWidget(
                   labelText: AppStrings.searchTitle,
                   controller: searchController,

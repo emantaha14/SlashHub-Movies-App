@@ -5,14 +5,14 @@ class MoviesModel extends MoviesEntity {
   }) : super(score: score, show: show);
 
   factory MoviesModel.fromJson(Map<String, dynamic> json) => MoviesModel(
-    score: json["score"]?.toDouble() ?? 0,
-    show: Show.fromJson(json["show"] ?? {}),
-  );
+        score: json["score"]?.toDouble() ?? 0,
+        show: Show.fromJson(json["show"] ?? {}),
+      );
 
   Map<String, dynamic> toJson() => {
-    "score": score,
-    "show": show.toJson(),
-  };
+        "score": score,
+        "show": show.toJson(),
+      };
 }
 
 class Show extends ShowEntity {
@@ -26,15 +26,15 @@ class Show extends ShowEntity {
     required int runtime,
     required String premiered,
   }) : super(
-    id: id,
-    name: name,
-    image: image,
-    summary: summary,
-    language: language,
-    genres: genres,
-    runtime: runtime,
-    premiered: premiered,
-  );
+          id: id,
+          name: name,
+          image: image,
+          summary: summary,
+          language: language,
+          genres: genres,
+          runtime: runtime,
+          premiered: premiered,
+        );
 
   factory Show.fromJson(Map<String, dynamic> json) {
     return Show(
@@ -52,15 +52,15 @@ class Show extends ShowEntity {
   }
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "image": image?.toJson(),
-    "summary": summary,
-    "language": language,
-    "genres": List<dynamic>.from(genres.map((x) => x)),
-    "runtime": runtime ?? 0,
-    "premiered": premiered,
-  };
+        "id": id,
+        "name": name,
+        "image": image?.toJson(),
+        "summary": summary,
+        "language": language,
+        "genres": List<dynamic>.from(genres.map((x) => x)),
+        "runtime": runtime ?? 0,
+        "premiered": premiered,
+      };
 }
 
 class ImageModel {
@@ -73,14 +73,14 @@ class ImageModel {
   });
 
   factory ImageModel.fromJson(Map<String, dynamic> json) => ImageModel(
-    medium: json["medium"] ?? '',
-    original: json["original"] ?? '',
-  );
+        medium: json["medium"] ?? '',
+        original: json["original"] ?? '',
+      );
 
   Map<String, dynamic> toJson() => {
-    "medium": medium,
-    "original": original,
-  };
+        "medium": medium,
+        "original": original,
+      };
 }
 
 class MoviesEntity {
@@ -115,15 +115,15 @@ class ShowEntity {
   });
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "image": image?.toJson(),
-    "summary": summary,
-    "language": language,
-    "genres": List<dynamic>.from(genres.map((x) => x)),
-    "runtime": runtime ?? 0,
-    "premiered": premiered,
-  };
+        "id": id,
+        "name": name,
+        "image": image?.toJson(),
+        "summary": summary,
+        "language": language,
+        "genres": List<dynamic>.from(genres.map((x) => x)),
+        "runtime": runtime ?? 0,
+        "premiered": premiered,
+      };
 }
 
 class ImageEntity {
