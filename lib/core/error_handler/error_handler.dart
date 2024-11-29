@@ -26,7 +26,7 @@ Failure _handleError(DioException error) {
       if (error.response != null) {
         String message = error.response?.statusMessage ?? "";
         if (error.response?.data != null) {
-          message = error.response?.data['error'] ?? message;
+          message = error.response?.data['message'] ?? message;
         }
         return Failure(error.response?.statusCode ?? 0, message);
       } else {
