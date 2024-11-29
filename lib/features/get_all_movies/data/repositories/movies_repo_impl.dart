@@ -19,6 +19,7 @@ class MoviesRepoImpl implements MoviesRepo {
         final moviesResponse = await moviesDataSource.getAllMovies();
         return Right(moviesResponse);
       } catch (error) {
+        print('$error');
         return Left(ErrorHandler.handle(error).failure);
       }
     } else {

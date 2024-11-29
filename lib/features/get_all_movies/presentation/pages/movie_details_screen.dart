@@ -2,7 +2,7 @@ import 'package:slashhub_app/core/imports/movies_details_imports.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   final int index;
-  final List<MoviesModel> movies;
+  final List<MoviesEntity> movies;
 
   const MovieDetailsScreen({
     super.key,
@@ -13,9 +13,9 @@ class MovieDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final movie = movies[index];
-    String formattedDate = movie.show.premiered != null
-        ? movie.show.premiered.toString().split(' ')[0]
-        : "No premiere date available";
+    String formattedDate = movie.show.premiered == DateTime(0000)
+        ? "No premiere date available"
+        : movie.show.premiered.toString().split(' ')[0];
 
     return Scaffold(
       appBar: AppBar(),
@@ -34,8 +34,7 @@ class MovieDetailsScreen extends StatelessWidget {
             ),
             DefaultSizedBox.vertical(15.h),
             MoviesDetailsInfoText(
-              infoText:
-                  "Language: ${movie.show.language.toString().split('.')[1]}",
+              infoText: "Language: ${movie.show.language}",
             ),
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
@@ -44,7 +43,7 @@ class MovieDetailsScreen extends StatelessWidget {
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
               infoText:
-                  "Run Time: ${movie.show.runtime != null ? '${movie.show.runtime} minutes' : 'No Run Time Available'}",
+                  "Run Time: ${movie.show.runtime == 0 ? 'No Run Time Available' : '${movie.show.runtime} minutes'}",
             ),
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
