@@ -9,50 +9,59 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
-        child: Column(
-          children: [
-            SearchBarWidget(
-              labelText: AppStrings.searchTitle,
-              controller: searchController,
-              onChanged: (String value) {
-                context
-                    .read<SearchCubit>()
-                    .searchForMovie(searchedMovie: value);
-              },
-            ),
-            Expanded(
-              child: BlocBuilder<SearchCubit, SearchState>(
-                builder: (context, state) {
-                  if (state is SearchLoadingState) {
-                    return const LoadingWidget();
-                  } else if (state is SearchErrorState) {
-                    return CustomErrorWidget(
-                      errorMessage: state.failure.error,
-                      onPressed: () {
-                        context.read<SearchCubit>().searchForMovie(
-                            searchedMovie: searchController.text);
-                      },
-                    );
-                  } else if (state is SearchSuccessState) {
-                    if (state.searchedMovies.isEmpty) {
-                      return Center(
-                        child: Text(
-                          AppStrings.noMoviesFound,
-                          style: TextStyle(color: ColorManager.cardBackGround),
-                        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              DefaultSizedBox.vertical(40.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: SearchBarWidget(
+                  labelText: AppStrings.searchTitle,
+                  controller: searchController,
+                  onChanged: (String value) {
+                    context
+                        .read<SearchCubit>()
+                        .searchForMovie(searchedMovie: value);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height *
+                    0.7, // Adjust height for content
+                child: BlocBuilder<SearchCubit, SearchState>(
+                  builder: (context, state) {
+                    if (state is SearchLoadingState) {
+                      return const LoadingWidget();
+                    } else if (state is SearchErrorState) {
+                      return CustomErrorWidget(
+                        errorMessage: state.failure.error,
+                        onPressed: () {
+                          context.read<SearchCubit>().searchForMovie(
+                              searchedMovie: searchController.text);
+                        },
+                      );
+                    } else if (state is SearchSuccessState) {
+                      if (state.searchedMovies.isEmpty) {
+                        return Center(
+                          child: Text(
+                            AppStrings.noMoviesFound,
+                            style:
+                                TextStyle(color: ColorManager.cardBackGround),
+                          ),
+                        );
+                      }
+                      return SearchSuccessWidget(
+                        searchedMovies: state.searchedMovies,
                       );
                     }
-                    return SearchSuccessWidget(
-                      searchedMovies: state.searchedMovies,
-                    );
-                  }
-                  return const StartSearchWidget();
-                },
+                    return const StartSearchWidget();
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
