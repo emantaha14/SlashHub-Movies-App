@@ -1,16 +1,12 @@
-# slashhub_app
+Movies App 📽️
+The Movies App is a Flutter-based application designed to provide users with an engaging and seamless experience for discovering, browsing, searching and learning about movies. This app connects to a movie database API to fetch up-to-date information, including trending movies, genres and detailed descriptions.
 
-A new Flutter project.
+Features ✨
+Trending Movies: Stay updated with the latest trending movies.
+Movie Categories: Browse movies by genres such as Action, Drama, Comedy, and more.
+Detailed Information: View detailed descriptions and release dates for each movie.
+Search Functionality: Quickly search for movies by title.
+Responsive UI: A user-friendly interface designed for both mobile and tablet devices.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Demo 🎥
+https://drive.google.com/file/d/1IjaHbmWXZmGLV5EVzvn96HthADqYCPta/view?usp=sharing
