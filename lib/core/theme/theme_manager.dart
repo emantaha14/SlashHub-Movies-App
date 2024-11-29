@@ -7,7 +7,7 @@ ThemeData getApplicationTheme() {
   return ThemeData(
     scaffoldBackgroundColor: ColorManager.mainBlack,
     primaryColor: ColorManager.primary,
-    appBarTheme: AppBarTheme(backgroundColor: ColorManager.mainBlack),
+    appBarTheme: AppBarTheme(backgroundColor: ColorManager.mainBlack, iconTheme: IconThemeData(color: ColorManager.white)),
     textTheme: TextTheme(
       titleLarge: getBoldStyle(color: Colors.white, fontSize: 50.sp),
     ),

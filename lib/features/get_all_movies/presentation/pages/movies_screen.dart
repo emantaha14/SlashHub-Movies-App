@@ -20,16 +20,27 @@ class MoviesScreen extends StatelessWidget {
               );
             } else if (state is MoviesSuccessState) {
               return ListView.builder(
-                itemCount: 10,
+                itemCount: state.movies.length,
                 itemBuilder: (context, index) {
                   String updatedSummary = state.movies[index].show.summary
                       .replaceAll(RegExp("[p<>b/]"), '');
-                  return MovieContainer(
-                    movieTitle: state.movies[index].show.name,
-                    movieSummary: updatedSummary,
-                    movieImage: state.movies[index].show.image?.original ??
-                        AppImages.noMovieImage,
-                  );
+                  return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MovieDetailsScreen(
+                                index: index,
+                                movies: state.movies,
+                              ),
+                            ));
+                      },
+                      child: MovieContainer(
+                        movieTitle: state.movies[index].show.name,
+                        movieSummary: updatedSummary,
+                        movieImage: state.movies[index].show.image?.original ??
+                            AppImages.noMovieImage,
+                      ));
                 },
               );
             }

@@ -44,7 +44,7 @@ class Show {
   Network? webChannel;
   dynamic dvdCountry;
   Externals externals;
-  Image? image;
+  ImageModel? image;
   String summary;
   int updated;
   Links links;
@@ -95,7 +95,7 @@ class Show {
     webChannel: json["webChannel"] == null ? null : Network.fromJson(json["webChannel"]),
     dvdCountry: json["dvdCountry"],
     externals: Externals.fromJson(json["externals"]),
-    image: json["image"] == null ? null : Image.fromJson(json["image"]),
+    image: json["image"] == null ? null : ImageModel.fromJson(json["image"]),
     summary: json["summary"],
     updated: json["updated"],
     links: Links.fromJson(json["_links"]),
@@ -152,16 +152,16 @@ class Externals {
   };
 }
 
-class Image {
+class ImageModel {
   String medium;
   String original;
 
-  Image({
+  ImageModel({
     required this.medium,
     required this.original,
   });
 
-  factory Image.fromJson(Map<String, dynamic> json) => Image(
+  factory ImageModel.fromJson(Map<String, dynamic> json) => ImageModel(
     medium: json["medium"],
     original: json["original"],
   );
