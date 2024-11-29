@@ -25,7 +25,7 @@ class SearchBarWidget extends StatelessWidget {
         : ColorManager.white;
     return Padding(
       padding:
-          EdgeInsets.only(top: 20.h, left: 15.w, right: 15.w, bottom: 30.h),
+          EdgeInsets.only(top: 20.h, left: 10.w, right: 10.w, bottom: 30.h),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [

@@ -1,5 +1,4 @@
 import 'package:slashhub_app/core/imports/search_imports.dart';
-import 'package:slashhub_app/features/get_all_movies/data/models/movies_model.dart';
 
 
 class SearchSuccessWidget extends StatelessWidget {
@@ -12,6 +11,7 @@ class SearchSuccessWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.0.w),
       child: ListView.builder(
+        shrinkWrap: true,
         itemCount: searchedMovies.length,
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {

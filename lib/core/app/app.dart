@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: getApplicationTheme(),
           onGenerateRoute: RouteGenerator.getRoute,
-          initialRoute: Routes.moviesListRoute,
+          initialRoute: Routes.homeRoute,
           home: const HomeScreen()),
     );
   }
