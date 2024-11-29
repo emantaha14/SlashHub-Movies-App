@@ -1,7 +1,7 @@
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:slashhub_app/core/error_handler/failures.dart';
 export 'package:slashhub_app/features/search/domain/use_cases/movies_usecase.dart';
-export 'package:slashhub_app/core/common_widgets/search_error_widget.dart';
+export 'package:slashhub_app/core/common_widgets/custom_error_widget.dart';
 export 'package:slashhub_app/core/helpers/app_strings.dart';
 export 'package:slashhub_app/features/search/presentation/cubit/search_cubit.dart';
 export 'package:slashhub_app/features/search/presentation/widgets/search_bar_widget.dart';

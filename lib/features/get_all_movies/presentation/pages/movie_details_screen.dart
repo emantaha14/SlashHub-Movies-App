@@ -1,3 +1,4 @@
+import 'package:slashhub_app/core/helpers/app_strings.dart';
 import 'package:slashhub_app/core/imports/movies_details_imports.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class MovieDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final movie = movies[index];
     String formattedDate = movie.show.premiered == DateTime(0000)
-        ? "No premiere date available"
+        ? AppStrings.noPremiereDate
         : movie.show.premiered.toString().split(' ')[0];
 
     return Scaffold(
@@ -34,24 +35,24 @@ class MovieDetailsScreen extends StatelessWidget {
             ),
             DefaultSizedBox.vertical(15.h),
             MoviesDetailsInfoText(
-              infoText: "Language: ${movie.show.language}",
+              infoText: "${AppStrings.language} ${movie.show.language}",
             ),
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
-              infoText: "Genres: ${movie.show.genres.join(", ")}",
+              infoText: "${AppStrings.genres} ${movie.show.genres.join(", ")}",
             ),
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
               infoText:
-                  "Run Time: ${movie.show.runtime == 0 ? 'No Run Time Available' : '${movie.show.runtime} minutes'}",
+                  "${AppStrings.runTime} ${movie.show.runtime == 0 ? AppStrings.noRunTime : '${movie.show.runtime} ${AppStrings.minutes}'}",
             ),
             DefaultSizedBox.vertical(10.h),
             MoviesDetailsInfoText(
-              infoText: "Premiere Date: $formattedDate",
+              infoText: "${AppStrings.premiereDate} $formattedDate",
             ),
             DefaultSizedBox.vertical(15.h),
             Text(
-              "Summary",
+              AppStrings.summary,
               style: getBoldStyle(color: Colors.white, fontSize: 24.sp),
             ),
             DefaultSizedBox.vertical(15.h),

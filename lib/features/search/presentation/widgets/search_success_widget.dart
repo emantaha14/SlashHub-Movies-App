@@ -1,6 +1,5 @@
 import 'package:slashhub_app/core/imports/search_imports.dart';
 
-
 class SearchSuccessWidget extends StatelessWidget {
   final List<MoviesEntity> searchedMovies;
 

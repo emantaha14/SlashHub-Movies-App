@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:slashhub_app/core/error_handler/error_handler.dart';
 import 'package:slashhub_app/core/error_handler/failures.dart';
@@ -19,7 +18,8 @@ class SearchMovieRepoImpl implements SearchedMovieRepo {
       String searchMovie) async {
     if (await networkInfo.isConnected) {
       try {
-        final searchResponse = await searchMovieDataSource.getSearchedMovies(searchedMovie: searchMovie);
+        final searchResponse = await searchMovieDataSource.getSearchedMovies(
+            searchedMovie: searchMovie);
         return Right(searchResponse);
       } catch (error) {
         return Left(ErrorHandler.handle(error).failure);
@@ -28,6 +28,4 @@ class SearchMovieRepoImpl implements SearchedMovieRepo {
       return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
     }
   }
-
-
 }
