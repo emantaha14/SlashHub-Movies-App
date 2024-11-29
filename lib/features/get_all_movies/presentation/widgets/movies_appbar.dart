@@ -1,4 +1,6 @@
 import 'package:slashhub_app/core/imports/movies_list_imports.dart';
+import 'package:slashhub_app/core/routing/app_routes.dart';
+import 'package:slashhub_app/features/search/presentation/pages/search_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -20,7 +22,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.searchRoute);
+          },
           icon: Icon(
             Icons.search,
             color: ColorManager.white,

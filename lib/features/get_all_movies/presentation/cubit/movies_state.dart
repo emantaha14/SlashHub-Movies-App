@@ -15,7 +15,7 @@ final class MoviesErrorState extends MoviesState {
 }
 
 final class MoviesSuccessState extends MoviesState {
-  final List<MoviesModel> movies;
+  final List<MoviesEntity> movies;
 
   MoviesSuccessState({required this.movies});
 }
