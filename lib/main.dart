@@ -13,6 +13,7 @@ Future<void> main() async {
     },
   );
 
+
   runApp(
     ScreenUtilInit(
       designSize: const Size(428, 994),

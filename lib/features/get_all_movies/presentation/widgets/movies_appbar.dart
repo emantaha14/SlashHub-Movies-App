@@ -9,6 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      title: Text('Movies List', style: TextStyle(color: ColorManager.white, fontSize: 20)),
       toolbarHeight: 100.h,
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
